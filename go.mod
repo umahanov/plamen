@@ -1,4 +1,4 @@
-module plamen
+module github.com/umahanov/plamen
 
 go 1.21.0
 
