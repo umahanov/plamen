@@ -1,0 +1,14 @@
+{
+  "CN": "My Awesome Cert Authority",
+  "key": {
+    "algo": "rsa",
+    "size": 2048
+  },
+  "names": {
+    "C": "RU",
+    "L": "MA",
+    "ST": "DAG",
+    "O": "PLOHHA",
+    "OU": "CLOUDE"
+  }
+}

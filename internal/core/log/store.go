@@ -76,7 +76,7 @@ func (s *store) read(start uint64) ([]byte, error) {
 
 // readAt reads from the store file, not buffer from the
 // off as start point up to p byte slice length bytes
-func (s *store) readAt(p []byte, off int64) (int, error) {
+func (s *store) ReadAt(p []byte, off int64) (int, error) {
 	s.l.Lock()
 	defer s.l.Unlock()
 	if err := s.buf.Flush(); err != nil {

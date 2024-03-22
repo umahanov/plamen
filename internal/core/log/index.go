@@ -53,6 +53,7 @@ func (i *index) Close() error {
 	return i.file.Close()
 }
 
+// Read
 func (i *index) Read(recIdx int64) (out uint32, pos uint64, err error) {
 	if i.size == 0 {
 		return 0, 0, io.EOF
@@ -71,6 +72,10 @@ func (i *index) Read(recIdx int64) (out uint32, pos uint64, err error) {
 	return out, pos, nil
 }
 
+// Writes new index entry
+// off is the offset of the index entry that we write
+// it is relative to the base offset of segment
+// pos is the position of the record in the store (start) (offset+payload)
 func (i *index) Write(off uint32, pos uint64) error {
 	if uint64(len(i.mmap)) < i.size+iRecSize {
 		return io.EOF
